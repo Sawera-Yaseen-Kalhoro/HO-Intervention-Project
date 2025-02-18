@@ -1,0 +1,15 @@
+<launch>
+    <!-- Launch localization node -->
+    <include file="$(find ho_intervention_project)/launch/localization_controller.launch" />
+
+    <!-- Launch TP controller node-->
+    <node pkg="ho_intervention_project" type="tp_controller_node.py" name="tp_controller_node" output="screen"/>
+
+    <!-- Launch ArUco detector node-->
+    <node pkg="ho_intervention_project" type="aruco_detection_node.py" name="aruco_detection_node" output="screen"/>
+
+    <!-- Launch main node-->
+    <node pkg="ho_intervention_project" type="main_node.py" name="main_node" output="screen"/>
+
+
+</launch>
